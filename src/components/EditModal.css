@@ -1,0 +1,18 @@
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    border:none;
+    background: none;
+    cursor:pointer;
+    transition: .3s ease all;
+    border-radius: 5px;
+    color: #1766DC;
+}
+  .close :hover {
+    background-color: black;
+  }
+  
+  
