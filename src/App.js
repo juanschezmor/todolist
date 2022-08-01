@@ -27,6 +27,7 @@ function App() {
     },
   ]);
   const [Estadomodal,setEstadomodal] = useState(false)
+  const [EditID,setEditID] = useState("")
   console.log(Activities)
   
   
@@ -39,27 +40,44 @@ function App() {
     
     setActivity(current => current.filter(act => {
       const buttonid = e.target.parentNode.parentNode.getAttribute('id')
-      console.log(act.activityid)
-      console.log(buttonid)
+      
       return act.activityid != buttonid  ;
     })
   )}
-  const ModalShowup = () =>{
-    console.log(Estadomodal)
+  const ModalShowup = (e) =>{
+     
     setEstadomodal(!Estadomodal)
-
+    setEditID(e.target.parentNode.parentNode.getAttribute('id'))
   }
-  const editTask = () => {
+  const closeModal = () =>{
+    
+    setEstadomodal(false)
+  }
+  
+  const editTask = (titulo,texto) => {
+    console.log(EditID)
+    console.log("esta en proceso de editacion")
+    Activities.forEach((act) => {
+      
+      if(act.activityid == EditID){
+        console.log("encontrada")
+        act.titulo = titulo
+        act.texto = texto 
+        closeModal()
+      }
+      
+    })
+    
 
 
   }
   
- 
+ console.log(Estadomodal)
   
   return (
-    <div className="bg-zinc-300 h-screen">
+    <div className="bg-zinc-300 w-screen h-screen">
       <Header />
-      <EditModal Estadomodal={Estadomodal} setEstadomodal={setEstadomodal} editTask={editTask}nowdate={nowdate}activityid={activityid}/>
+      {Estadomodal && <EditModal Estadomodal={Estadomodal} closeModal={closeModal} editTask={editTask}nowdate={nowdate}activityid={activityid}/>}
       <div className="w-auto flex justify-center">
       
       <Form addTask={addTask} editTask={editTask} nowdate={nowdate} activityid={activityid} boton="Add"/>

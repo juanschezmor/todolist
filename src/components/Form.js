@@ -40,9 +40,8 @@ export const Form = ({ addTask,editTask ,nowdate,activityid, boton }) => {
     addTask (input)
   }
   else if(boton == "Edit"){
-    const input = {titulo,texto,fecha : nowdate,
-      activityid : activityid }
-      editTask(input)
+      
+      editTask(titulo,texto)
   }
     
   };
