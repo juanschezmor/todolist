@@ -1,3 +1,11 @@
+#Info
+This is a project created by me, it's my first project using React because I wanted to learn making it. Visually is very simple because I focused on learning javascript functions and React hooks and did'nt care about the aesthetic. 
+demo-todolist.mp4 - I added a video where you can see the app and its funtions.
+It's a simple To Do List app where you can add tasks, edit them and delete them.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
