@@ -1,4 +1,3 @@
-¡Por supuesto! Aquí tienes el contenido en formato Markdown:
 
 # ToDoList App with React
 
